@@ -1,2 +1,2 @@
-# CSSDise-oWebResponsive
+# CSSDiseñoWebResponsive
 Proyecto CSS y Diseño Web Responsive - Web de Fotografía
