@@ -18,6 +18,9 @@ header{
 	border-radius: 10px 10px 0px 0px;
 	-moz-border-radius: 10px 10px 0px 0px;
 	-webkit-border-radius: 10px 10px 0px 0px;
+	
+	animation-duration: 1s;
+	animation-name: slidein;
 }
 header h1{
 	width: 60%;
@@ -30,6 +33,24 @@ header #menu{
 	margin: auto;
 	text-align:center;
 }
+
+header #menu a{
+	color:white;
+	text-decoration:underline;
+}
+
+@keyframes slidein{
+	0% {
+		margin-top: 150%;
+	}
+	60% {
+		margin-top: -5%;
+	}
+	100% {
+		margin-top: 0%;
+	}
+}
+
 @media screen and (max-width: 900px){
     header{
 		display: -webkit-flex;
@@ -45,15 +66,11 @@ header #menu{
 		width: 100%;
 	}
 }
-header #menu a{
-	color:white;
-	text-decoration:underline;
-}
 
 /*CONTENIDO*/
 #contenido{	
 	max-width:900px;
-	margin:auto;
+	margin:auto;	
 }
 .contenedorCentral {
 	padding-bottom: 10px;
@@ -82,42 +99,6 @@ header #menu a{
 	
 	display: flex;
 	flex-direction: row;
-}
-
-.galeria {
-	width: 100%;
-	background-color:#d5c75f;
-	padding-top: 15px;
-	
-	display: -webkit-flex;
-	-webkit-flex-direction: row;
-	
-	display: flex;
-	flex-direction: row;
-}
-
-@media screen and (max-width: 900px){
-	#contenido{	
-		width:100%;
-	}	
-	.contenedorCentral #imagen1 img{
-		height :194px;
-		width :259px;
-	}
-	.contenedorSecundario {
-		display: -webkit-flex;
-		-webkit-flex-direction: column;
-		
-		display: flex;
-		flex-direction: column;
-	}
-	.galeria {
-		display: -webkit-flex;
-		-webkit-flex-direction: column;
-		
-		display: flex;
-		flex-direction: column;
-	}
 }
 .contenedorSecundario #imagen2{	
 	margin:auto;
@@ -148,6 +129,53 @@ header #menu a{
     transform: translate(20px, -5px);
 	
 	box-shadow:5px 5px 5px #82c3a6;
+}
+#galeria {
+	margin:auto;
+	background-color:#d5c75f;
+	padding-top: 10px;
+	
+	display: -webkit-flex;
+	-webkit-flex-direction: row;
+	
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+#galeria img{
+	padding:10px;
+}
+#galeria .imagen1{
+	filter: blur(10px);
+}
+#galeria div:nth-child(even){
+	filter: grayscale(100%);
+}
+#galeria .imagen3{
+	filter: sepia(90%);
+}
+
+@media screen and (max-width: 900px){
+	#contenido{	
+		width:100%;
+	}	
+	.contenedorCentral #imagen1 img{
+		height :194px;
+		width :259px;
+	}
+	.contenedorSecundario {
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		
+		display: flex;
+		flex-direction: column;
+	}
+	#galeria {		
+		display: -webkit-flex;
+		-webkit-flex-direction: column;
+		
+		display: flex;
+		flex-direction: column;
+	}
 }
 
 /*PIE*/
